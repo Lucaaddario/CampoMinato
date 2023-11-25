@@ -1,0 +1,137 @@
+/*
+COLOR PALETTE
+  black: rgb(0, 23, 50); #001732;
+  orange: rgb(241, 117, 78); #f1754e;
+  lightgreen: rgb(78, 241, 187); #4ef1bb;
+  bg-color: rgb(216, 238, 232);  #d8eee8;
+  bg-dark-color: rgb(203, 224, 221); #cbe0dd;
+  clicked-cell: rgb(157, 197, 199); #9dc5c7;
+*/
+
+/* CSS RESET */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Regole generiche */
+body {
+	padding: 16px;
+	line-height: 1;
+	color: white;
+	background: linear-gradient(rgba(0, 0, 0, 0.808),  rgba(0, 0, 0, 0.363)) ,url(/images/background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Darker Grotesque', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+
+}
+
+.game-container {
+	width: 484px;
+	margin-top: 60px;
+}
+
+/* Pannello di gioco */
+h1 {
+	font-size: 40px;
+}
+
+.score {
+	font-size: 32px;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Tabellone di gioco */
+
+.game-board {
+	position: relative;
+	border: 2px solid rgb(0, 23, 50);
+}
+
+.grid {
+	height: 480px;
+	width: 480px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+
+.cell {
+	width: 48px;
+	height: 48px;
+	cursor: pointer;
+	border: 1px solid black;
+	background-color: rgba(184, 135, 11, 0.692);
+}
+
+.cell-clicked,
+.cell-bomb{
+	cursor: not-allowed;
+}
+
+.cell-dark {
+	background-color: #0D2C47;
+}
+
+
+/* Schermata di fine gioco */
+.end-game-screen {
+	background-color: rgba(241, 117, 78, 0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+}
+
+
+.end-game-text {
+	font-size: 48px;
+	line-height: 1.2;
+	font-family: 'Press Start 2P', cursive;
+	margin-bottom: 16px;
+	color: white
+}
+
+button {
+	border: 2px solid #0D2C47;
+	font-size: 24px;
+	font-family: 'Darker Grotesque', sans-serif;
+	text-transform: uppercase;
+	padding: 4px 20px 8px 20px;
+	cursor: pointer;
+	color:#0D2C47;
+}
+
+button:hover {
+	background-color: rgb(252, 252, 252);
+}
+
+.cell:hover,
+.cell-clicked {
+	background-color: rgb(190, 196, 197)
+}
+
+.cell-bomb {
+	background-color: rgb(241, 117, 78);
+	background-image: url('images/bomb.png');
+	background-size: contain;
+}
+.hidden {
+	display: none;
+}
+.win {
+	background-color: rgba(3, 177, 41, 0.6);
+}
